@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:in_ride/src/core/utils/navigation/route_navigator.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
-import 'package:in_ride/src/core/utils/stateless_view.dart';
 import 'package:in_ride/src/core/utils/theme/theme.dart';
-import 'package:in_ride/src/core/widgets/custom_sizedbox.dart';
 import 'package:in_ride/src/presentation/features/features_barrel.dart';
 
 part './../features/splash_screen/splash_view.dart';
@@ -60,8 +58,9 @@ class SplashScreenController extends State<SplashScreen>
 
     Timer(
         const Duration(seconds: 3),
-        () => CustomNavigator.pushReplacementNamedToWithRoute(
-            SigninScreen.routeName));
+
+        /// This Navigator have a slidee in animation to make it feel smooth
+        () => Get.pushReplacement(SigninScreen.routeName));
   }
 
   @override

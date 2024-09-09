@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +19,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.grey,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
     // Glue the SettingsController to the MaterialApp.
     //
     // The ListenableBuilder Widget listens to the SettingsController for changes.
@@ -26,7 +34,7 @@ class MyApp extends StatelessWidget {
       listenable: settingsController,
       builder: (BuildContext context, Widget? child) {
         return ScreenUtilInit(
-          designSize: const Size(375, 812),
+          designSize: const Size(932, 430),
           builder: (context, child) => MaterialApp(
             // Providing a restorationScopeId allows the Navigator built by the
             // MaterialApp to restore the navigation stack when a user leaves and
@@ -60,7 +68,7 @@ class MyApp extends StatelessWidget {
             // preferred ThemeMode (light, dark, or system default) from the
             // SettingsController to display the correct theme.
             theme: AppTheme.themeData,
-            darkTheme: ThemeData.dark(),
+            // darkTheme: ThemeData.dark(),
             themeMode: settingsController.themeMode,
 
             // Set the name of the App
@@ -72,12 +80,10 @@ class MyApp extends StatelessWidget {
             // Route can be found at route_navigator.dart file
             onGenerateRoute: (settings) {
               return Transitions.slideIn(
-                CustomNavigator.getRouteName(
-                    settings.name ?? '', settings.arguments),
+                Get.getRouteName(settings.name ?? '', settings.arguments),
                 settings,
               );
             },
-           
           ),
         );
       },

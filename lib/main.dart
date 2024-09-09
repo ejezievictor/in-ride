@@ -19,6 +19,6 @@ void main() async {
   // SettingsView.
 
   /// Load RouteNavigator
-  CustomNavigator.init(settingsController);
+  Get.init(settingsController);
   runApp(MyApp(settingsController: settingsController));
 }

@@ -13,8 +13,8 @@ part './transitions.dart';
 
 final navKey = GlobalKey<NavigatorState>();
 
-class CustomNavigator {
-  CustomNavigator._();
+class Get {
+  Get._();
 
   static BuildContext? get context => navKey.currentContext;
 
@@ -31,7 +31,7 @@ class CustomNavigator {
     return await state!.push(route);
   }
 
-  static Future<T?> pushToWithNavKey<T extends Object?>(
+  static Future<T?> pushTo<T extends Object?>(
     String page, {
     Object? arguments,
   }) {
@@ -44,8 +44,7 @@ class CustomNavigator {
   }
 
 // Works like Navigator.pushReplacementNamed, just a little tweak to make it work with Named routes
-  static Future<T?>
-      pushReplacementNamedToWithRoute<T extends Object?, TO extends Object?>(
+  static Future<T?> pushReplacement<T extends Object?, TO extends Object?>(
     String page, {
     Object? arguments,
   }) {
@@ -57,7 +56,7 @@ class CustomNavigator {
     );
   }
 
-  static Future<T?> pushNamedAndRemoveUntil<T extends Object?>(
+  static Future<T?> pushAndRemoveUntil<T extends Object?>(
     String page,
     RoutePredicate predicate, {
     Object? arguments,
@@ -71,7 +70,7 @@ class CustomNavigator {
     );
   }
 
-  void pop<T>([T? value]) {
+  static void back<T>([T? value]) {
     return state!.pop<T>(value);
   }
 
@@ -83,6 +82,8 @@ class CustomNavigator {
         return const SplashScreen();
       case SigninScreen.routeName:
         return const SigninScreen();
+      case SignupScreen.routeName:
+        return const SignupScreen();
       case SettingsView.routeName:
         return SettingsView(controller: settingsController);
 

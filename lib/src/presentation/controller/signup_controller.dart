@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:in_ride/src/core/utils/assets.gen.dart';
-import 'package:in_ride/src/core/utils/navigation/route_navigator.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
-import 'package:in_ride/src/core/utils/stateless_view.dart';
 import 'package:in_ride/src/core/utils/theme/theme.dart';
 import 'package:in_ride/src/core/utils/validators.dart';
 import 'package:in_ride/src/core/widgets/custom_button.dart';
@@ -13,20 +11,20 @@ import 'package:in_ride/src/core/widgets/custom_sizedbox.dart';
 import 'package:in_ride/src/core/widgets/custom_textfield.dart';
 import 'package:in_ride/src/presentation/features/features_barrel.dart';
 
-part './../features/auth/signin_view.dart';
+part './../features/auth/signup_view.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({super.key});
-  static const routeName = '/sign-in';
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
+  static const routeName = '/sign-up';
 
   @override
-  State<SigninScreen> createState() => SigninController();
+  State<SignupScreen> createState() => SignupController();
 }
 
-class SigninController extends State<SigninScreen> {
+class SignupController extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) => _SigninView(this);
+  Widget build(BuildContext context) => _SignupView(this);
 }

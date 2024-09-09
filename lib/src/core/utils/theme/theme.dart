@@ -10,7 +10,7 @@ class AppTheme {
 
   static final ThemeData themeData = ThemeData(
     fontFamily: 'inter',
-    scaffoldBackgroundColor: Palette.backgroundColor,
+    scaffoldBackgroundColor: Palette.textColor,
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
       shape: CircleBorder(),
       // backgroundColor: Palette.iconColor,
@@ -44,7 +44,7 @@ class AppTheme {
   );
   static TextStyle displayLargeMedium = GoogleFonts.inter(
     fontSize: 32,
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w500,
     height: 1.18,
     color: Palette.textColor,
   );
@@ -89,7 +89,7 @@ class AppTheme {
 
   static TextStyle textMediumRegular = GoogleFonts.inter(
     fontSize: 16,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     height: 1.38,
     color: Palette.textColor,
   );

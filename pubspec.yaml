@@ -15,6 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.10+1
   google_fonts: ^6.2.1
   provider: ^6.1.2
 
@@ -33,3 +34,8 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - assets/svgs/
+    - assets/images/flutter_logo.png
+    - assets/images/google.png
+    - assets/images/twitter.png
+    - assets/images/facebook.png
