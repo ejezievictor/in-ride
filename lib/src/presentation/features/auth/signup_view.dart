@@ -6,15 +6,16 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(automaticallyImplyLeading: true),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 10, top: 30),
+          padding: const EdgeInsets.only(bottom: 10, top: 20),
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -35,7 +36,7 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Space.h(20),
+                      Space.h(25),
                       Text(
                         'Create your account',
                         style: AppTheme.textMediumRegular.copyWith(
@@ -56,53 +57,41 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextField(
-                        hintText: 'Name',
-                        icon: SvgPicture.asset(
-                          Assets.svgs.profileSVG,
-                          height: 18.h,
-                        ),
+                        hintText: '    Name',
+                        iconData: Icons.email_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.name,
                         validator: emailValidator,
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: 'Phone',
-                        icon: SvgPicture.asset(
-                          Assets.svgs.phoneSVG,
-                          height: 18.h,
-                        ),
+                        hintText: '   Phone',
+                        iconData: Icons.phone_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.phone,
                         validator: emailValidator,
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: 'Email',
-                        icon: SvgPicture.asset(
-                          Assets.svgs.messageSVG,
-                          height: 18.h,
-                        ),
+                        hintText: '   Email',
+                        iconData: Icons.email_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.emailAddress,
                         validator: emailValidator,
                       ),
                       Space.h(10),
-                      CustomTextField(
-                        hintText: 'Password',
-                        icon: SvgPicture.asset(
-                          Assets.svgs.lockSVG,
-                          height: 18.h,
-                        ),
+                      CustomPasswordField(
+                        hintText: '   Password',
+                        iconData: Icons.lock_rounded,
                         controller: controller._passwordController,
                         obscureText: true,
                         keyboardType: TextInputType.text,
                         validator: passwordValidator,
                       ),
-                      Space.h(30),
+                      Space.h(50),
                       CustomButton(
                         text: 'Signup',
-                        onPressed: () {},
+                        onPressed: () => Get.pushTo(OtpScreen.routeName),
                       ),
                       Space.h(10),
                     ],

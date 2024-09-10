@@ -10,6 +10,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10, top: 30),
@@ -60,7 +61,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextField(
-                        hintText: 'Email',
+                        hintText: '   Email',
                         // icon: SvgPicture.asset(
                         //   Assets.svgs.messageSVG,
                         //   // height: 12.h,
@@ -72,7 +73,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: 'Password',
+                        hintText: '  Password',
                         // icon: SvgPicture.asset(
                         //   Assets.svgs.lockSVG,
                         //   height: 18.h,

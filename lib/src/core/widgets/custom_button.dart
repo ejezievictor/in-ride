@@ -13,8 +13,8 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width = double.infinity,
-    this.height = 50.0,
-    this.borderRadius = 14,
+    this.height = 50,
+    this.borderRadius = 12,
   });
 
   @override

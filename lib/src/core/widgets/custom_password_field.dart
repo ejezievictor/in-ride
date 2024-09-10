@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
 
-/// Textfield used by the app
-///
-
-class CustomTextField extends StatefulWidget {
+class CustomPasswordField extends StatefulWidget {
   /// TextEditingController for getting user input
   final TextEditingController controller;
 
@@ -43,8 +40,9 @@ class CustomTextField extends StatefulWidget {
 
   /// The color to fill the decoration's container with, if [filled] is true.
   final Color? fillColor;
-  const CustomTextField({
-    super.key,
+
+  const CustomPasswordField({
+    Key? key,
     required this.controller,
     this.hintText,
     this.iconData,
@@ -58,13 +56,13 @@ class CustomTextField extends StatefulWidget {
     this.icon,
     this.filled = false,
     this.fillColor,
-  });
+  }) : super(key: key);
 
   @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
+  _CustomPasswordFieldState createState() => _CustomPasswordFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _CustomPasswordFieldState extends State<CustomPasswordField> {
   /// A flag indicating whether the password is obscured. Defaults to widget.obscureText.
   bool _obscureValue = true;
 
@@ -76,50 +74,37 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final inputDecoration = InputDecoration(
+    final InputDecoration inputDecoration = InputDecoration(
+      // contentPadding: widget.contentPadding,
       hintText: widget.hintText,
-      hintStyle: const TextStyle(color: Colors.grey, letterSpacing: 0.5),
-      // isDense: true,
-      prefixIcon: Container(
-        decoration: const BoxDecoration(
-          color: Palette.backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10),
-            bottomLeft: Radius.circular(10),
-          ),
-        ),
-        child:
-            widget.icon ?? Icon(widget.iconData, color: Colors.white, size: 18),
-      ),
       border: OutlineInputBorder(
-        borderSide: const BorderSide(
-          color: Palette.backgroundColor,
-          width: 1.0,
+        borderSide: BorderSide(
+         
         ),
-        borderRadius: widget.borderRadius ?? BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: const BorderSide(
-          color: Palette.backgroundColor,
-          width: 1.0,
+        borderSide: BorderSide(
+         
         ),
-        borderRadius: widget.borderRadius ?? BorderRadius.circular(12),
-      ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
-      fillColor: widget.fillColor,
-      filled: widget.filled,
-    );
-    return IgnorePointer(
-      ignoring: widget.onTap != null,
-      child: TextFormField(
-        controller: widget.controller,
-        obscureText: _obscureValue,
-        enabled: widget.enabled,
-        cursorColor: Palette.textColor,
-        onChanged: widget.onChanged,
-        keyboardType: widget.keyboardType,
-        decoration: inputDecoration,
+        borderRadius: BorderRadius.circular(12),
       ),
     );
+
+    return TextFormField(
+          controller: widget.controller,
+          validator: widget.validator,
+          enabled: widget.enabled,
+          // cursorColor: widget.cursorColor,
+          onChanged: widget.onChanged,
+          // style: widget.textStyle ??
+              // Theme.of(context)
+              //     .textTheme
+              //     .bodyMedium!
+              //     .copyWith(color: AppTheme.textColor1),
+          decoration: inputDecoration,
+          obscureText: _obscureValue,
+        );
+    
   }
 }

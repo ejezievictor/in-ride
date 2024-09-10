@@ -2,6 +2,7 @@
 library;
 
 export 'package:in_ride/src/core/utils/stateless_view.dart';
+export 'package:in_ride/src/presentation/controller/otp_controller.dart';
 
 export '../controller/signin_controller.dart';
 export '../controller/signup_controller.dart';

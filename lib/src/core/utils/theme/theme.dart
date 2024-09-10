@@ -61,6 +61,12 @@ class AppTheme {
     height: 1.5,
     color: Palette.textColor,
   );
+  static TextStyle displayPSmallBold = GoogleFonts.poppins(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    height: 1.5,
+    color: Palette.textColor,
+  );
   static TextStyle displaySmallMedium = GoogleFonts.inter(
     fontSize: 20,
     fontWeight: FontWeight.w500,

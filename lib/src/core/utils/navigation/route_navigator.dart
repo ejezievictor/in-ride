@@ -84,6 +84,8 @@ class Get {
         return const SigninScreen();
       case SignupScreen.routeName:
         return const SignupScreen();
+      case OtpScreen.routeName:
+        return const OtpScreen();
       case SettingsView.routeName:
         return SettingsView(controller: settingsController);
 
