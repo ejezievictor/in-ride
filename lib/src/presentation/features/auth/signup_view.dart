@@ -6,16 +6,15 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(automaticallyImplyLeading: true),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 10, top: 20),
+          padding: const EdgeInsets.only(bottom: 10, top: 30),
           child: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -27,7 +26,6 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Space.h(5),
                       Text(
                         'Passenger',
                         style: AppTheme.textMediumRegular.copyWith(
@@ -36,7 +34,7 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Space.h(25),
+                      Space.h(15),
                       Text(
                         'Create your account',
                         style: AppTheme.textMediumRegular.copyWith(
@@ -51,13 +49,12 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextField(
-                        hintText: '    Name',
+                        hintText: 'Name',
                         iconData: Icons.email_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.name,
@@ -65,35 +62,66 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: '   Phone',
+                        hintText: 'Phone',
                         iconData: Icons.phone_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.phone,
-                        validator: emailValidator,
+                        // validator: emailValidator,
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: '   Email',
+                        hintText: 'Email',
                         iconData: Icons.email_rounded,
                         controller: controller._emailController,
                         keyboardType: TextInputType.emailAddress,
-                        validator: emailValidator,
+                        // validator: emailValidator,
                       ),
                       Space.h(10),
-                      CustomPasswordField(
-                        hintText: '   Password',
+                      CustomTextField(
+                        hintText: 'Password',
                         iconData: Icons.lock_rounded,
                         controller: controller._passwordController,
                         obscureText: true,
                         keyboardType: TextInputType.text,
                         validator: passwordValidator,
                       ),
-                      Space.h(50),
+                      Space.h(30),
                       CustomButton(
-                        text: 'Signup',
+                        text: 'Register',
                         onPressed: () => Get.pushTo(OtpScreen.routeName),
                       ),
                       Space.h(10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Already have an account?',
+                            style: AppTheme.textSmallMedium
+                                .copyWith(color: Palette.regularTextColor),
+                          ),
+                          const SizedBox(width: 5),
+                          GestureDetector(
+                            onTap: () {
+                              final currentRoute =
+                                  ModalRoute.of(context)?.settings.name;
+
+                              // Check if the current route is the signup route
+                              if (currentRoute == SignupScreen.routeName) {
+                                // If we're already on the signup screen, just go back
+                                Get.back();
+                              } else {
+                                // Navigate to the signup screen
+                                Get.pushTo(SigninScreen.routeName);
+                              }
+                            },
+                            child: Text(
+                              'Log In',
+                              style: AppTheme.textSmallMedium
+                                  .copyWith(color: Palette.backgroundColor),
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
