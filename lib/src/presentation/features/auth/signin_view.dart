@@ -10,7 +10,6 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10, top: 30),
@@ -19,7 +18,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -31,7 +30,6 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      Space.h(5),
                       Text(
                         'Passenger',
                         style: AppTheme.textMediumRegular.copyWith(
@@ -40,7 +38,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      Space.h(20),
+                      Space.h(15),
                       Text(
                         'Login to your account',
                         style: AppTheme.textMediumRegular.copyWith(
@@ -55,13 +53,12 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
               ),
               SliverToBoxAdapter(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextField(
-                        hintText: '   Email',
+                        hintText: 'Email',
                         // icon: SvgPicture.asset(
                         //   Assets.svgs.messageSVG,
                         //   // height: 12.h,
@@ -73,7 +70,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                       ),
                       Space.h(10),
                       CustomTextField(
-                        hintText: '  Password',
+                        hintText: 'Password',
                         // icon: SvgPicture.asset(
                         //   Assets.svgs.lockSVG,
                         //   height: 18.h,
@@ -100,7 +97,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                           ]),
                         ),
                       ),
-                      Space.h(20),
+                      Space.h(15),
                       CustomButton(
                         text: 'Login',
                         onPressed: () {},
@@ -124,7 +121,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                           ),
                           Space.w(10),
                           Text(
-                            'or login with',
+                            'Or Login with',
                             textAlign: TextAlign.center,
                             style: AppTheme.textSmallRegular
                                 .copyWith(color: Palette.regularTextColor),
@@ -220,7 +217,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                         children: [
                           Text(
                             'Don’t have an account?',
-                            style: AppTheme.textSmallRegular
+                            style: AppTheme.textSmallMedium
                                 .copyWith(color: Palette.regularTextColor),
                           ),
                           const SizedBox(width: 5),
@@ -240,7 +237,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                             },
                             child: Text(
                               'Sign Up',
-                              style: AppTheme.textSmallRegular
+                              style: AppTheme.textSmallMedium
                                   .copyWith(color: Palette.backgroundColor),
                             ),
                           ),

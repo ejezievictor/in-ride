@@ -42,7 +42,7 @@ class CustomPinField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               textStyle:
-                  AppTheme.displayMediumBold.copyWith(color: Palette.textColor),
+                  AppTheme.displayMediumBold.copyWith(color: Colors.black),
             ),
         focusedPinTheme = focusedPinTheme ??
             PinTheme(
@@ -54,7 +54,7 @@ class CustomPinField extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
               textStyle:
-                  AppTheme.displayMediumBold.copyWith(color: Palette.textColor),
+                  AppTheme.displayMediumBold.copyWith(color: Colors.black),
             );
 
   @override
