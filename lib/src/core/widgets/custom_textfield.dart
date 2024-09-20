@@ -115,7 +115,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         controller: widget.controller,
         obscureText: _obscureValue,
         enabled: widget.enabled,
-        cursorColor: Palette.textColor,
+        cursorColor: Palette.regularTextColor,
         onChanged: widget.onChanged,
         keyboardType: widget.keyboardType,
         decoration: inputDecoration,

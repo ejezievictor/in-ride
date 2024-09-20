@@ -14,7 +14,9 @@ part './transitions.dart';
 final navKey = GlobalKey<NavigatorState>();
 
 class Get {
-  Get._();
+  factory Get() => singleInstance;
+  Get._internal();
+  static Get singleInstance = Get._internal();
 
   static BuildContext? get context => navKey.currentContext;
 
