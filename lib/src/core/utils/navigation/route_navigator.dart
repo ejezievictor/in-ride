@@ -88,6 +88,14 @@ class Get {
         return const SignupScreen();
       case OtpScreen.routeName:
         return const OtpScreen();
+      case TermsOfUse.routeName:
+        return const TermsOfUse();
+      case EnablePushNotification.routeName:
+        return const EnablePushNotification();
+      case EnableLocation.routeName:
+        return const EnableLocation();
+      case HomeScreen.routeName:
+        return const HomeScreen();
       case SettingsView.routeName:
         return SettingsView(controller: settingsController);
 

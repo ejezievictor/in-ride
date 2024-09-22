@@ -27,6 +27,10 @@ class SigninController extends State<SigninScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  void login(){
+    Get.pushTo(TermsOfUse.routeName);
+  }
+
   @override
   Widget build(BuildContext context) => _SigninView(this);
 }

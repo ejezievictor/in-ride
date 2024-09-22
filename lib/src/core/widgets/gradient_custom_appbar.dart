@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
 import 'package:in_ride/src/core/utils/theme/theme.dart';
 
-/// Custom app bar to display at the top of the app
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+/// Gradient Custom app bar to display at the top of the app
+class GradientCustomAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
   final Widget? title;
   final Widget? leading;
   final List<Widget>? actions;
   final bool centerTitle;
 
-  const CustomAppBar({
+  const GradientCustomAppBar({
     super.key,
     this.title,
     this.leading,
@@ -20,7 +21,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Palette.textColor,
+              Color(0xff4285f4),
+              // Palette.textColor,
+            ],
+          ),
+        ),
+      ),
       centerTitle: centerTitle,
       title: title,
       leading: leading,

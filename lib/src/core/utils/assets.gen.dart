@@ -12,6 +12,8 @@ class AssetsImages {
   final facebookPNG = 'assets/images/facebook.png';
   final googlePNG = 'assets/images/google.png';
   final twitterPNG = 'assets/images/twitter.png';
+  final notification = 'assets/images/push_notification.png';
+  final location = 'assets/images/location.png';
 }
 
 class AssetsSvgs {

@@ -80,16 +80,19 @@ class _CustomTextFieldState extends State<CustomTextField> {
       hintText: widget.hintText,
       hintStyle: const TextStyle(color: Colors.grey, letterSpacing: 0.5),
       // isDense: true,
-      prefixIcon: Container(
-        decoration: const BoxDecoration(
-          color: Palette.backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10),
-            bottomLeft: Radius.circular(10),
+      prefixIcon: Padding(
+        padding: const EdgeInsets.only(right: 3),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: Palette.backgroundColor,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(10),
+              bottomLeft: Radius.circular(10),
+            ),
           ),
+          child: widget.icon ??
+              Icon(widget.iconData, color: Colors.white, size: 18),
         ),
-        child:
-            widget.icon ?? Icon(widget.iconData, color: Colors.white, size: 18),
       ),
       border: OutlineInputBorder(
         borderSide: const BorderSide(
@@ -105,13 +108,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         borderRadius: widget.borderRadius ?? BorderRadius.circular(12),
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
+      contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       fillColor: widget.fillColor,
       filled: widget.filled,
     );
     return IgnorePointer(
       ignoring: widget.onTap != null,
       child: TextFormField(
+        style: const TextStyle(
+            color: Colors.black, letterSpacing: 0.5, fontSize: 17),
         controller: widget.controller,
         obscureText: _obscureValue,
         enabled: widget.enabled,

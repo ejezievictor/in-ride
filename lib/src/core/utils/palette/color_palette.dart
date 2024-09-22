@@ -10,6 +10,8 @@ abstract class Palette {
   static const textDarkerColor = Color(0XFF9A9A9A);
   static const greyTextColor = Color(0XFF767676);
   static const headerTextColor = Color(0XFF191B23);
+  static const textColor3 = Color(0XFF3E3E3E);
+  static const bottomsheetColor = Color(0xffdfe3ef);
 
   /// Icon Color
   static const iconColor = Color(0XFF020202);
