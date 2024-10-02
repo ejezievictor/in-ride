@@ -27,11 +27,11 @@ class TermsOfUse extends StatelessWidget {
       body: SafeArea(
         child: Container(
           decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              )),
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(25),
+            ),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -44,7 +44,7 @@ class TermsOfUse extends StatelessWidget {
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
-              Space.h(20),
+              Space.h(15),
               SingleChildScrollView(
                 child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 24),

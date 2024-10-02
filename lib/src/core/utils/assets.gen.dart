@@ -23,4 +23,6 @@ class AssetsSvgs {
   final messageSVG = 'assets/svgs/message.svg';
   final phoneSVG = 'assets/svgs/phone.svg';
   final profileSVG = 'assets/svgs/profile.svg';
+  final notificationSVG = 'assets/svgs/notification.svg';
+  final locationSVG = 'assets/svgs/location.svg';
 }

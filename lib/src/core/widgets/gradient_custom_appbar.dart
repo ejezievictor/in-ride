@@ -22,13 +22,13 @@ class GradientCustomAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     return AppBar(
       flexibleSpace: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
               Palette.textColor,
-              Color(0xff4285f4),
+              Colors.blue.shade50
               // Palette.textColor,
             ],
           ),

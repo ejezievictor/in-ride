@@ -80,7 +80,7 @@ class _SignupView extends StatelessView<SignupScreen, SignupController> {
                       CustomTextField(
                         hintText: 'Password',
                         iconData: Icons.lock_rounded,
-                        controller: controller._passwordController,
+                        controller: controller.passwordController,
                         obscureText: true,
                         keyboardType: TextInputType.text,
                         validator: passwordValidator,

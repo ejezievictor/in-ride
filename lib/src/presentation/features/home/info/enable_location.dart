@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:in_ride/src/core/utils/assets.gen.dart';
+import 'package:in_ride/src/core/utils/navigation/route_navigator.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
 import 'package:in_ride/src/core/utils/theme/theme.dart';
 import 'package:in_ride/src/core/widgets/custom_button.dart';
 import 'package:in_ride/src/core/widgets/custom_sizedbox.dart';
+import 'package:in_ride/src/presentation/features/features_barrel.dart';
 
 class EnableLocation extends StatelessWidget {
   static const routeName = '/enable-location';
@@ -22,13 +24,15 @@ class EnableLocation extends StatelessWidget {
               children: [
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    textAlign: TextAlign.end,
-                    'Skip',
-                    style: AppTheme.textMediumRegular.copyWith(
-                        color: Palette.backgroundColor,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600),
+                  child: GestureDetector(
+                    child: Text(
+                      textAlign: TextAlign.end,
+                      'Skip',
+                      style: AppTheme.textMediumRegular.copyWith(
+                          color: Palette.backgroundColor,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600),
+                    ),
                   ),
                 ),
                 Image.asset(Assets.images.location),
@@ -55,7 +59,7 @@ class EnableLocation extends StatelessWidget {
                 Space.h(30),
                 CustomButton(
                   text: 'Enable',
-                  onPressed: () {},
+                  onPressed: () => Get.pushReplacement(HomeScreen.routeName),
                 ),
                 Space.h(10),
                 CustomButton(
@@ -63,7 +67,7 @@ class EnableLocation extends StatelessWidget {
                   setColor: true,
                   textColor: Palette.backgroundColor,
                   bgColor: Palette.textColor,
-                  onPressed: () {},
+                  onPressed: () => Get.pushReplacement(HomeScreen.routeName),
                 ),
               ],
             ),
