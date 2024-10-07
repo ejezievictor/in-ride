@@ -42,7 +42,7 @@ class CustomPasswordField extends StatefulWidget {
   final Color? fillColor;
 
   const CustomPasswordField({
-    Key? key,
+    super.key,
     required this.controller,
     this.hintText,
     this.iconData,
@@ -56,7 +56,7 @@ class CustomPasswordField extends StatefulWidget {
     this.icon,
     this.filled = false,
     this.fillColor,
-  }) : super(key: key);
+  });
 
   @override
   _CustomPasswordFieldState createState() => _CustomPasswordFieldState();
@@ -75,36 +75,40 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
   @override
   Widget build(BuildContext context) {
     final InputDecoration inputDecoration = InputDecoration(
-      // contentPadding: widget.contentPadding,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
       hintText: widget.hintText,
       border: OutlineInputBorder(
-        borderSide: BorderSide(
-         
+        borderSide: const BorderSide(
+          color: Palette.backgroundColor,
+          width: 1.0,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(12),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-         
+        borderSide: const BorderSide(
+          color: Palette.backgroundColor,
+          width: 1.0,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: widget.borderRadius ?? BorderRadius.circular(12),
       ),
     );
 
-    return TextFormField(
-          controller: widget.controller,
-          validator: widget.validator,
-          enabled: widget.enabled,
-          // cursorColor: widget.cursorColor,
-          onChanged: widget.onChanged,
-          // style: widget.textStyle ??
-              // Theme.of(context)
-              //     .textTheme
-              //     .bodyMedium!
-              //     .copyWith(color: AppTheme.textColor1),
-          decoration: inputDecoration,
-          obscureText: _obscureValue,
-        );
-    
+    return IgnorePointer(
+      ignoring: widget.onTap != null,
+      child: TextFormField(
+        controller: widget.controller,
+        validator: widget.validator,
+        enabled: widget.enabled,
+        cursorColor: Palette.regularTextColor,
+        onChanged: widget.onChanged,
+        // style: widget.textStyle ??
+        // Theme.of(context)
+        //     .textTheme
+        //     .bodyMedium!
+        //     .copyWith(color: AppTheme.textColor1),
+        decoration: inputDecoration,
+        obscureText: _obscureValue,
+      ),
+    );
   }
 }

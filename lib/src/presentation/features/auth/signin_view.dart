@@ -100,7 +100,7 @@ class _SigninView extends StatelessView<SigninScreen, SigninController> {
                       Space.h(15),
                       CustomButton(
                         text: 'Login',
-                        onPressed: () {},
+                        onPressed: () => controller.login(),
                       ),
                       Space.h(20),
                       Row(

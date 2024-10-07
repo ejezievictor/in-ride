@@ -1,15 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:in_ride/src/core/utils/assets.gen.dart';
 import 'package:in_ride/src/core/utils/navigation/route_navigator.dart';
 import 'package:in_ride/src/core/utils/palette/color_palette.dart';
 import 'package:in_ride/src/core/utils/theme/theme.dart';
 import 'package:in_ride/src/core/utils/validators.dart';
-import 'package:in_ride/src/core/widgets/custom_appbar.dart';
 import 'package:in_ride/src/core/widgets/custom_button.dart';
-import 'package:in_ride/src/core/widgets/custom_password_field.dart';
 import 'package:in_ride/src/core/widgets/custom_sizedbox.dart';
 import 'package:in_ride/src/core/widgets/custom_textfield.dart';
 import 'package:in_ride/src/presentation/features/features_barrel.dart';
@@ -26,7 +20,9 @@ class SignupScreen extends StatefulWidget {
 
 class SignupController extends State<SignupScreen> {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   @override
   Widget build(BuildContext context) => _SignupView(this);

@@ -8,6 +8,7 @@ import 'package:in_ride/src/core/utils/theme/theme.dart';
 import 'package:in_ride/src/core/utils/validators.dart';
 import 'package:in_ride/src/core/widgets/custom_appbar.dart';
 import 'package:in_ride/src/core/widgets/custom_button.dart';
+import 'package:in_ride/src/core/widgets/custom_password_field.dart';
 import 'package:in_ride/src/core/widgets/custom_sizedbox.dart';
 import 'package:in_ride/src/core/widgets/custom_textfield.dart';
 import 'package:in_ride/src/presentation/features/features_barrel.dart';
@@ -25,6 +26,10 @@ class SigninScreen extends StatefulWidget {
 class SigninController extends State<SigninScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  void login(){
+    Get.pushTo(TermsOfUse.routeName);
+  }
 
   @override
   Widget build(BuildContext context) => _SigninView(this);
