@@ -16,7 +16,9 @@ class _HomeView extends StatelessView<HomeScreen, HomeController> {
           Positioned(
             top: 30.h,
             left: 20,
-            child: buildCustomDrawer(),
+            child: buildCustomDrawer(onTap: () {
+              Scaffold.of(context).openDrawer();
+            }),
           ),
           GoogleMap(
             mapType: MapType.hybrid,
@@ -36,12 +38,15 @@ class _HomeView extends StatelessView<HomeScreen, HomeController> {
   }
 }
 
-Widget buildCustomDrawer() {
-  return Container(
-    alignment: Alignment.center,
-    padding: const EdgeInsets.all(12),
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14), color: Colors.blue),
-    child: const Icon(Icons.menu, color: Colors.black, size: 24),
+Widget buildCustomDrawer({required VoidCallback onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      alignment: Alignment.center,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(14), color: Colors.blue),
+      child: const Icon(Icons.menu, color: Colors.black, size: 24),
+    ),
   );
 }

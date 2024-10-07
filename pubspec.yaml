@@ -42,5 +42,5 @@ flutter:
     - assets/images/google.png
     - assets/images/twitter.png
     - assets/images/facebook.png
-    # - assets/images/location.png
-    # - assets/images/push_notification.png
+    - assets/images/location.png
+    - assets/images/push_notification.png

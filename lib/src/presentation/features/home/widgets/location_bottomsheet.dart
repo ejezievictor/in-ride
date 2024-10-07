@@ -165,7 +165,7 @@ class LocationBottomSheet extends StatelessWidget {
               Container(
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
+                    color: Colors.grey.shade400.withOpacity(0.7),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child:
@@ -204,7 +204,7 @@ class LocationBottomSheet extends StatelessWidget {
               Container(
                   padding: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
+                    color: Colors.grey.shade400.withOpacity(0.7),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child:
